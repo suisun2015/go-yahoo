@@ -2,6 +2,10 @@
 
 go-yahoo is go client for [Yahoo Web API](http://developer.yahoo.co.jp/)
 
+## Support Web API
+
+- [WIP] yahoo auction(ヤフオク!)
+
 ## installation
 
 ```
@@ -13,7 +17,7 @@ Please read [This page](http://developer.yahoo.co.jp/start/).
 
 ## Usage
 
-Search "jewelry"
+Search "jewelry" in [ヤフオク!](http://auctions.yahoo.co.jp/)
 
 ```go
 package main
