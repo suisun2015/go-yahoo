@@ -5,19 +5,6 @@ import (
 	"net/url"
 )
 
-// type Chiroot struct {
-// 	ChiResultSet *ChiResultSet `xml:"urn:yahoo:jp:itemSearch ResultSet,omitempty"`
-// }
-
-// type ChiSearchCharityOption struct {
-// 	ChiProportion int `xml:"urn:yahoo:jp:itemSearch Proportion,omitempty"`
-// }
-
-// type ChiImage struct {
-// 	Attr_height string `xml:" height,attr"`
-// 	Attr_width  string `xml:" width,attr"`
-// 	Text        string `xml:",chardata"`
-// }
 type SrchImage struct {
 	Id     string `xml:"Id,omitempty"`
 	Small  string `xml:"Small,omitempty"`
@@ -29,9 +16,9 @@ type SrchExtImage struct {
 	Height string `xml:"Height,omitempty"`
 }
 type SrchReview struct {
-	Rate  string `xml:"Rate,omitempty"`
-	Count string `xml:"Count,omitempty"`
-	Url   string `xml:"Url,omitempty"`
+	Rate  float64 `xml:"Rate,omitempty"`
+	Count int64   `xml:"Count,omitempty"`
+	Url   string  `xml:"Url,omitempty"`
 }
 type SrchAffiliate struct {
 	Rate float64 `xml:"Rate,omitempty"`
