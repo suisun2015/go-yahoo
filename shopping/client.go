@@ -13,7 +13,7 @@ import (
 
 const (
 	baseURL = "https://shopping.yahooapis.jp/ShoppingWebService/V1"
-	AppID   = "dj00aiZpPWswZEdlQnhiRzgxaSZzPWNvbnN1bWVyc2VjcmV0Jng9N2Q-"
+	AppID   = "<your App ID>"
 )
 
 type Client struct {
