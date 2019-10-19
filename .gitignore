@@ -75,4 +75,4 @@ vendor/
 
 # End of https://www.gitignore.io/api/osx,vim,go
 
-*_test.go
+main.go
