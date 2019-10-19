@@ -5,11 +5,12 @@ go-yahoo is go client for [Yahoo Web API](http://developer.yahoo.co.jp/)
 ## Support Web API
 
 - [WIP] yahoo auction(ヤフオク!)
+- [WIP] yahoo shopping(ヤフショッピング!)
 
 ## installation
 
 ```
-go get github.com/whywaita/go-yahoo
+go get github.com/suisun2015/go-yahoo
 ```
 
 go-yahoo need Application ID(auth token).
@@ -27,7 +28,7 @@ import (
   "fmt"
   "log"
 
-  "github.com/whywaita/go-yahoo/auction"
+  "github.com/suisun2015/go-yahoo/auction"
 )
 
 const (
@@ -55,5 +56,40 @@ func main() {
     log.Fatal("fail GetItemsListBySearch")
   }
   fmt.Println(list)
+}
+```
+
+Search "jewelry" in [ヤフショッピング!](http://shopping.yahoo.co.jp/)
+
+```go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+
+	"github.com/go-yahoo/shopping"
+)
+
+func main() {
+	// logger := log.Logger{}
+  c, _ := shopping.NewClient(nil)
+  /* keyword search
+	keyword := "vaio"  
+  items, _ := c.GetShoppingItemListBySearch(keyword)
+  */
+  /* item information
+	code := "creeam_a01556"
+  items, err := c.GetShoppingItemInfo(code)
+  */
+	category := "1635"
+	items, err := c.GetShoppingCategoryRanking(category, 1)
+	if err != nil {
+		fmt.Println("error: ", err.Error())
+	} else {
+		result, _ := json.Marshal(items)
+		// fmt.Printf("%+v\n", items)
+		fmt.Println(string(result))
+	}
 }
 ```
